@@ -1,29 +1,29 @@
 /* -- BYIMAAN -> THE FUTURE -- */
 
-import React from 'react'
+import React from 'react';
+
+const H1 = ({text='', className='N/A', onClick=function(){}}) => text !== '' && <h1 className={className} onClick={onClick}>{text}</h1>; 
+const P = ({className='', text='', onClick=function(){}}) => text !== '' && <p className={` ${className} `} onClick={onClick}>{text}</p>;
 
 function About() {
 
     const descH1 = "Ochi is a strategic partner for fast-grow­ing tech businesses that need to raise funds, sell prod­ucts, ex­plain com­plex ideas, and hire great peo­ple.";
 
-    const H1 = ({text=descH1, className='N/A'}) => <h1 className={className}>{text}</h1>; 
-
     return (
         <div className='w-full bg-[#CDEA68] rounded-t-3xl text-black font-thin'>
-            <H1 className='text-[6vmin]  font-light leading-[5vmax] tracking-tight whitespace-normal  px-10 lg:px-20 py-20 lg:pr-[20vw]'/>
+            <H1 text={descH1} className='text-[6vmin]  font-light leading-[5vmax] tracking-tight whitespace-normal  px-10 lg:px-20 py-20 lg:pr-[20vw]'/>
             <Description extraCss=' pl-[2.5rem] lg:pl-[5rem] pt-[2vmax] pb-[6vmax] '/>
+            <ImageAndApproach extraCss=' p-[2.5rem] lg:pl-[5rem] flex flex-col lg:flex-row' />
         </div>
     );
 };
 
 function Description({extraCss=''}){
 
-    const P = ({className='', text=''}) => text !== '' && <p className={` font-[400] text-[16px] ${className} `}>{text}</p>;
-
-    const LeftDesc = ({text='What you can expect: ',extraCss=''}) => <div className={` ${extraCss} `}> <P text={text}/> </div>;
+    const LeftDesc = ({text='What you can expect: ',extraCss=''}) => <div className={` ${extraCss} `}> <P className='font-[400] text-[18px] ' text={text}/> </div>;
     
     const RightDesc = ({extraCss=''}) => {
-
+ 
         const RightI = ({extraCss=''}) => {
 
             const txt1 = 'We create tailored presentations to help you persuade your colleagues, clients, or investors. Whether it’s live or digital,delivered for one or a hundred people.';
@@ -31,8 +31,8 @@ function Description({extraCss=''}){
     
             return (
                 <div className={` ${extraCss} `}>
-                    <P text={txt1} className={'mb-[3.5vmax] '} />
-                    <P text={txt2} className={''} />
+                    <P text={txt1} className={'font-[400] text-[17px] mb-[3.5vmax] '} />
+                    <P text={txt2} className={'font-[400] text-[17px] '} />
                 </div>
             );
         };
@@ -41,9 +41,9 @@ function Description({extraCss=''}){
             return (
                 <div className={`flex flex-col  lg:flex-col-reverse lg:items-end ${extraCss}`}>
                     <div>
-                    <P text={'S: '}/>  
+                    <P text={'S: '} className='font-[400] text-[16px] '/>  
                         {
-                            links.map( (v,i) => <P key={i} text={v}/>)
+                            links.map( (v,i) => <P className='font-[400] text-[18px] ' key={i} text={v}/>)
                         }         
                     </div>
                 </div>
@@ -64,5 +64,34 @@ function Description({extraCss=''}){
         </div>
     )
 };
+
+function ImageAndApproach({extraCss=''}){
+
+    const ReadMore = ({title='Our Approach:', url='/', extraCss=''}) => {
+
+        const handleClick = () => { window.location = url };
+
+        return (
+            <div className={`w-full lg:w-1/2 ${extraCss}`}>
+                <H1 text={title} className='font-semibold text-[7vmin] lg:text-[5vmin]'/>
+                <P text='Read More.' className=' pl-5 pr-9 py-3 mt-2 bg-black font-semibold rounded-[20px] w-fit text-white' onClick={handleClick}/>
+            </div>
+        );
+    };
+    const TeamImage = ({extraCss=''}) => {
+        
+        return (
+            <div className={`w-full h-[64vmin] mt-6 lg:mt-0 rounded-[10px] lg:w-1/2 bg-[url('https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg')] bg-cover bg-center ${extraCss}`}>
+            </div>
+        );
+    };
+
+    return (
+        <div className={`w-full ${extraCss}`}>
+            <ReadMore />
+            <TeamImage />
+        </div>
+    );
+}
 
 export default About;
