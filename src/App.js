@@ -5,6 +5,7 @@ import Navbar from './commonJSX/Navbar';
 import Landing from './commonJSX/Landing';
 import Marquee from './components/Marquee/Marquee';
 import About from './components/Pages/About';
+import Eyes from './commonJSX/Eyes';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Landing />
       <Marquee />
       <About />
+      <Eyes />
 
     </div>
   )
