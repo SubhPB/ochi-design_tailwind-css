@@ -1,10 +1,7 @@
 /* -- BYIMAAN -> THE FUTURE -- */
 
 import React from 'react';
-
-const H1 = ({text='', className='N/A', onClick=function(){}}) => text !== '' && <h1 className={className} onClick={onClick}>{text}</h1>; 
-const P = ({className='', text='', onClick=function(){}}) => text !== '' && <p className={` ${className} `} onClick={onClick}>{text}</p>;
-
+import { H1, P } from '../../assests';
 function About() {
 
     const descH1 = "Ochi is a strategic partner for fast-grow­ing tech businesses that need to raise funds, sell prod­ucts, ex­plain com­plex ideas, and hire great peo­ple.";

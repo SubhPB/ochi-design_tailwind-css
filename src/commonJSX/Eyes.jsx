@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 function Eyes() {
 
-    const [rotate, setRotate] = useState(270);
+    const [rotate, setRotate] = useState(0);
     const targetDiv = useRef(null);
 
     const VirtualEye = () => {
@@ -53,7 +53,6 @@ function Eyes() {
         const event = targetDiv.current.addEventListener('mousemove', e => {
             const mouseX = e.clientX, mouseY = e.clientY;
             const deltaX = mouseX - window.innerWidth/2, deltaY = mouseY - window.innerHeight/2;
-            
             let angle = Math.atan2(deltaY, deltaX) * (180/Math.PI) - 180;
             setRotate(angle);
         });

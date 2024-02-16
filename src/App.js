@@ -6,6 +6,8 @@ import Landing from './commonJSX/Landing';
 import Marquee from './components/Marquee/Marquee';
 import About from './components/Pages/About';
 import Eyes from './commonJSX/Eyes';
+import Projects from './components/Projects/Projects';
+import Reviews from './components/Reviews/Reviews';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Marquee />
       <About />
       <Eyes />
+      <Projects />
+      <Reviews />
 
     </div>
   )
