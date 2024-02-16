@@ -8,6 +8,8 @@ import About from './components/Pages/About';
 import Eyes from './commonJSX/Eyes';
 import Projects from './components/Projects/Projects';
 import Reviews from './components/Reviews/Reviews';
+import Cards from './components/Cards/Cards';
+import GetReady from './components/GetReady/GetReady';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <Eyes />
       <Projects />
       <Reviews />
+      <Cards />
+      <GetReady />
 
     </div>
   )

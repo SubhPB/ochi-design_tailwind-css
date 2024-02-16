@@ -38,9 +38,9 @@ function Eyes() {
         );
     };
 
-    const BackgroundPicture = ({children}) => {
+    const BackgroundPicture = ({children, extraCss=''}) => {
         return (
-            <div ref={targetDiv} className="mat relative w-full h-screen bg-cover bg-center overflow-hidden bg-[url('https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-scaled.jpg')]">
+            <div ref={targetDiv} className={"mat relative w-full h-screen bg-cover bg-center overflow-hidden bg-[url('https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-scaled.jpg')] " + extraCss}>
                 <div className="absolute flex gap-[2.2vmax] top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] bg-red-500 z-10">
                     {children}
                 </div>    
