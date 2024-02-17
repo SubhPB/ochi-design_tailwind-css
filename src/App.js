@@ -19,7 +19,7 @@ function App() {
       <Landing />
       <Marquee />
       <About />
-      <Eyes />
+      <Eyes extraCss=' h-screen '/>
       <Projects />
       <Reviews />
       <Cards />

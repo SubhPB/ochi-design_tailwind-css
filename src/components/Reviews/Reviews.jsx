@@ -15,7 +15,7 @@ function Reviews({extraCss=''}) {
                 }
             </div>
         </div>
-    )
+    );
 };
 
 

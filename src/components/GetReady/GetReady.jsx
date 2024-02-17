@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { H1, Dot, P } from '../../assests';
+import Eyes from '../../commonJSX/Eyes';
 
 function GetReady() {
 
@@ -21,16 +22,16 @@ function GetReady() {
     function Footer({className=''}){
         return (
             <div className={className}>
-                <Button text='START THE PROJECT'/>
+                <Button text='START THE PROJECT' extraCss='  bg-zinc-800  '/>
                 <H1 text='OR' className='w-full text-sm font-[600] text-center text-zinc-900 my-4'/>
-                <Button text='HELLO@OCHI.DESIGN' extraCss=' bg-transparent border-[1px] border-black text-black' dotExtraCss='bg-zinc-900' />
+                <Button text='HELLO@OCHI.DESIGN' extraCss=' bg-transparent border-[1px] border-black text-black' dotExtraCss=' bg-zinc-900 ' />
             </div>
         )
     };
 
     function Button({text='Get Ready!.', extraCss='', dotExtraCss=''}){
         return (
-            <div className={`flex gap-10 justify-center items-center mx-[50%]  bg-zinc-800  rounded-[10vmin] translate-x-[-50%] w-fit px-6 py-4  ${extraCss}`}>
+            <div className={`flex gap-10 justify-center items-center mx-[50%] rounded-[10vmin] translate-x-[-50%] w-fit px-6 py-4  ${extraCss}`}>
                 <P text={text} className=' text-[13px] text-nowrap ' />
                 <Dot extraCss={dotExtraCss}/>  
             </div>
@@ -42,7 +43,8 @@ function GetReady() {
     return (
         <div className='get-ready w-full px-7 lg:px-14 py-[18vmin] bg-[#CDEA68] flex flex-col'>
             <Heading className='w-full'/>
-            <Footer className='w-full mt-24'/>
+            <Eyes extraCss=' h-fit bg-none bg-red-800 '/>
+            <Footer className=' w-full mt-24'/>
         </div>
     );
 }
