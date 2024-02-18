@@ -1,10 +1,12 @@
 /* -- BYIMAAN -> THE FUTURE -- */
 
-import React from 'react'
+import React, {useRef} from 'react'
 import { H1, Dot, P } from '../../assests';
 import Eyes from '../../commonJSX/Eyes';
 
 function GetReady() {
+
+    const animationRef = useRef(null);
 
     const Heading = ({className=''}) => {
 
@@ -41,12 +43,12 @@ function GetReady() {
 
 
     return (
-        <div className='get-ready w-full px-7 lg:px-14 py-[18vmin] bg-[#CDEA68] flex flex-col'>
+        <div ref={animationRef} className='get-ready w-full px-7 lg:px-14 py-[18vmin] bg-[#CDEA68] flex flex-col'>
             <Heading className='w-full'/>
-            <Eyes extraCss=' h-fit bg-none bg-red-800 '/>
-            <Footer className=' w-full mt-24'/>
+            <Eyes extraCss=' h-[45vh] bg-none ' animationRef={animationRef}/>
+            <Footer className=' w-full mt-14'/>
         </div>
     );
 }
 
-export default GetReady
+export default GetReady;

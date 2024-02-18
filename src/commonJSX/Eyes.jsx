@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-function Eyes({extraCss=''}) {
+function Eyes({extraCss='', animationRef=undefined}) {
 
     const [rotate, setRotate] = useState(0);
     const targetDiv = useRef(null);
@@ -49,15 +49,19 @@ function Eyes({extraCss=''}) {
     };
 
     useEffect( () => {
+
+        // if the scrolling height is larger and outside of the Eyes commponent...
+        // then animationDiv will be triggered else backgroundPicture...
+        const animationDiv = animationRef?.current ? animationRef.current : targetDiv.current
         
-        const event = targetDiv.current.addEventListener('mousemove', e => {
+        const event = animationDiv.addEventListener('mousemove', e => {
             const mouseX = e.clientX, mouseY = e.clientY;
             const deltaX = mouseX - window.innerWidth/2, deltaY = mouseY - window.innerHeight/2;
             let angle = Math.atan2(deltaY, deltaX) * (180/Math.PI) - 180;
             setRotate(angle);
         });
 
-        return () => targetDiv.current.removeEventListener('mousemove',event);
+        return () => animationDiv.removeEventListener('mousemove',event);
     },[rotate]);
 
     return (

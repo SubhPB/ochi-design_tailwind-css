@@ -10,6 +10,7 @@ import Projects from './components/Projects/Projects';
 import Reviews from './components/Reviews/Reviews';
 import Cards from './components/Cards/Cards';
 import GetReady from './components/GetReady/GetReady';
+import Footer from './commonJSX/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Reviews />
       <Cards />
       <GetReady />
+      <Footer />
 
     </div>
   )
