@@ -11,16 +11,26 @@ import Reviews from './components/Reviews/Reviews';
 import Cards from './components/Cards/Cards';
 import GetReady from './components/GetReady/GetReady';
 import Footer from './commonJSX/Footer';
+import LocomotiveScroll from 'locomotive-scroll';
 
 function App() {
+
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+  });
+
   return (
     <div className='w-full min-h-screen bg-zinc-900'>
 
       <Navbar />
       <Landing />
-      <Marquee />
-      <About />
-      <Eyes extraCss=' h-screen ' />
+      <div className='z-5' data-scroll data-scroll-section data-scroll-speed='-.1'>
+        <Marquee />
+        <About />
+        <Eyes extraCss=' h-screen' />
+      </div>
+      
       <Projects />
       <Reviews />
       <Cards />

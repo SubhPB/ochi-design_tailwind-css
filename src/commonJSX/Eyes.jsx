@@ -11,7 +11,7 @@ function Eyes({extraCss='', animationRef=undefined}) {
 
         const Eye = ({ extraCss ='', children}) => {
             return (
-                <div className={`rounded-full flex justify-center items-center  ${extraCss}`}>
+                <div className={`rounded-full flex justify-center items-center  ${extraCss} z-5`}>
                     {children}
                 </div>
             );
@@ -28,8 +28,7 @@ function Eyes({extraCss='', animationRef=undefined}) {
             <Eye extraCss=' bg-white w-[15vmax] h-[15vmax]'>
                 <Eye extraCss='bg-black w-2/3 h-2/3 relative'>
                     <EyeLine>
-                        <Eye extraCss=' bg-white w-[2.6vmax] h-[2.6vmax] m-x-1'>
-                            
+                        <Eye extraCss=' bg-white w-[2.6vmax] h-[2.6vmax] m-x-1'>    
                         </Eye>    
                     </EyeLine> 
                     <h3 className=' realtive text-white'>Play</h3>
@@ -40,7 +39,10 @@ function Eyes({extraCss='', animationRef=undefined}) {
 
     const BackgroundPicture = ({children}) => {
         return (
-            <div ref={targetDiv} className={`mat relative w-full bg-cover bg-center overflow-hidden bg-[url('https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-scaled.jpg')] + ${extraCss}`}>
+            <div ref={targetDiv} 
+            className={`mat relative w-full bg-cover bg-center  bg-[url('https://ochi.design/wp-content/uploads/2022/05/Top-Viewbbcbv-1-scaled.jpg')] + ${extraCss}`}
+            data-scroll data-scroll-section data-scroll-speed='-.2' 
+            >
                 <div className="absolute flex gap-[2.2vmax] top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]">
                     {children}
                 </div>    
@@ -67,9 +69,12 @@ function Eyes({extraCss='', animationRef=undefined}) {
     return (
         
         <BackgroundPicture>
-            <VirtualEye /> {/* -- left eye -- */}
 
-            <VirtualEye /> {/* -- right eye -- */}
+            <div className='w-full h-fit flex ' >
+                <VirtualEye /> {/* -- left eye -- */}
+                <VirtualEye /> {/* -- right eye -- */}
+            </div>
+
         </BackgroundPicture>
         
     );

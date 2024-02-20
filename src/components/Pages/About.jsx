@@ -7,7 +7,7 @@ function About() {
     const descH1 = "Ochi is a strategic partner for fast-grow­ing tech businesses that need to raise funds, sell prod­ucts, ex­plain com­plex ideas, and hire great peo­ple.";
 
     return (
-        <div className='w-full bg-[#CDEA68] rounded-t-3xl text-black font-thin'>
+        <div data-scroll data-scroll-speed='-0.1'  className='relative w-full bg-[#CDEA68] rounded-t-3xl text-black font-thin z-10'>
             <H1 text={descH1} className='text-[6vmin]  font-light leading-[5vmax] tracking-tight whitespace-normal  px-10 lg:px-20 py-20 lg:pr-[20vw]'/>
             <Description extraCss=' pl-[2.5rem] lg:pl-[5rem] pt-[2vmax] pb-[6vmax] '/>
             <ImageAndApproach extraCss=' p-[2.5rem] lg:pl-[5rem] flex flex-col lg:flex-row' />

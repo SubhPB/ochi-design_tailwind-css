@@ -44,7 +44,7 @@ function GetReady() {
 
     return (
         <div ref={animationRef} className='get-ready w-full px-7 lg:px-14 py-[18vmin] bg-[#CDEA68] flex flex-col'>
-            <Heading className='w-full'/>
+            <Heading className='w-full z-10'/>
             <Eyes extraCss=' h-[45vh] lg:h-[45vh] bg-none ' animationRef={animationRef}/>
             <Footer className=' w-full mt-14'/>
         </div>

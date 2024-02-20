@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { MdArrowOutward } from "react-icons/md";
+import { motion } from 'framer-motion';
 
 function Landing() {
   return (
@@ -18,10 +19,15 @@ function Landing() {
 
 function Masker({text=undefined, attachImg= false, }){
 
+    
     const _SideImg = () => {
         const imgStyle = " bg-[url('https://images.pexels.com/photos/2035214/pexels-photo-2035214.jpeg')] bg-cover bg-center ";
         return (
-            <div className={`w-[13vmin] h-[10vmin] lg:h-[10vmin]  relative lg:top-[3vmin] rounded-[13px] mr-[2vmin] ${imgStyle}`}></div>
+            <motion.div 
+                className={`w-[13vmin] h-[10vmin] lg:h-[10vmin]  relative lg:top-[3vmin] rounded-[13px] mr-[2vmin] ${imgStyle}`}
+                initial={{width: 0}} animate={{width:'13vmin'}} transition={{ease: [0.76, 0, 0.24, 1], duration: 1}}
+            >    
+            </motion.div>
         );
     };
 
