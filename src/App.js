@@ -30,13 +30,15 @@ function App() {
         <About />
         <Eyes extraCss=' h-screen' />
       </div>
-      
-      <Projects />
-      <Reviews />
-      <Cards />
-      <GetReady />
-      <Footer />
 
+      <div className='bg-zinc-900' data-scroll data-scroll-section data-scroll-speed='.05'>
+        <Projects />
+        <Reviews />
+        <Cards />
+        <GetReady />
+        <Footer />
+      </div>
+      
     </div>
   )
 }
