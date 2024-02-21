@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ochi/static/css/main.695645ff.css",
+    "main.js": "/ochi/static/js/main.3a2d84fc.js",
+    "static/js/592.86791f61.chunk.js": "/ochi/static/js/592.86791f61.chunk.js",
+    "index.html": "/ochi/index.html",
+    "main.695645ff.css.map": "/ochi/static/css/main.695645ff.css.map",
+    "main.3a2d84fc.js.map": "/ochi/static/js/main.3a2d84fc.js.map",
+    "592.86791f61.chunk.js.map": "/ochi/static/js/592.86791f61.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.695645ff.css",
+    "static/js/main.3a2d84fc.js"
+  ]
+}
